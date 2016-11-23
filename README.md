@@ -27,10 +27,15 @@ for more information.
 ## Running the S3 sample
 
 This sample application connects to Amazon's [Simple Storage Service (S3)](http://aws.amazon.com/s3),
-creates a bucket, and uploads a file to that bucket. The script will automatically
-create the file to upload. All you need to do is run it:
+and do basic operations there. The script will automatically
+create the file to upload. All you need to do is run it like `node <fileName.js>` 
+Eg.
 
+    node createBucket.js
     node uploadToAws.js
+    node downloadFromAmazon.js
+    node deleteBucketAws.js
+    node deleteKeyAws.js
 
 The S3 documentation has a good overview of the [restrictions for bucket names](http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html)
 for when you start making your own buckets.
