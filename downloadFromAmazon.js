@@ -3,7 +3,6 @@
 var AWS = require('aws-sdk');
 // var uuid = require('node-uuid');
 
-// Create a bucket and upload something into it
 var bucketName = 'testingnetwork';
 var fs = require('fs');
 

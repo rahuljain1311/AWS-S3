@@ -12,16 +12,19 @@ function deleteFromAws() {
     var s3bucket = new AWS.S3({
         params: {Bucket: bucketName}
     });
-
-    var urlParams = {Bucket: bucketName, Key: 'mypicRj.jpg' };
-    s3bucket.deleteObjects(urlParams);
-    // s3bucket.getObject(params, function(errBucket, dataBucket) {
-    //     if (errBucket) {
-    //         console.log("Error uploading data: ", errBucket);
-    //     } else {
-    //         console.log(dataBucket);
-    //     }
-    // });
+    var urlParams = {
+        Bucket: 'testingnetwork',
+        Delete: {
+            Objects: [
+                {Key: 'mypicRj.jpg'}
+            ]
+        }
+    };
+    s3bucket.deleteObjects(urlParams, function(err, data) {
+        if (err)
+            return console.log(err);
+        console.log('success in deletion of key/keys');
+    });
 }
 
 deleteFromAws();
