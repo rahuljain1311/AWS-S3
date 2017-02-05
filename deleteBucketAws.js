@@ -6,7 +6,7 @@
 var AWS = require('aws-sdk');
 // var uuid = require('node-uuid');
 
-var bucketName = 'testingbucketnetwork';
+var bucketName = 'imagelop';
 
 function deleteBucket() {
     var s3bucket = new AWS.S3({

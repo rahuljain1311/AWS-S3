@@ -2,18 +2,17 @@
 // Load the SDK and UUID
 var AWS = require('aws-sdk');
 // var uuid = require('node-uuid');
-var bucketName = 'imagelop';
+var bucketName = 'clsdb01localimagebucket';
 var fs = require('fs');
 
 function sendFileToAmazon() {
   var s3bucket = new AWS.S3({
-    params: {Bucket: bucketName},
-    signatureVersion: 'v4'
+    params: {Bucket: bucketName}
   });
 
-  var params = {Key: 'imgNew1.jpg', Body: ''};
+  var params = {Key: 'img.jpg', Body: ''};
 
-  fs.readFile('./zombie.jpg', function(err, data) {
+  fs.readFile('./img.jpg', function(err, data) {
     if (err) throw err;
     params.Body = data;
 

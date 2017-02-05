@@ -6,14 +6,14 @@
 var AWS = require('aws-sdk');
 // var uuid = require('node-uuid');
 
-var bucketName = 'testingnetwork';
+var bucketName = 'imagelop';
 
 function deleteFromAws() {
     var s3bucket = new AWS.S3({
         params: {Bucket: bucketName}
     });
     var urlParams = {
-        Bucket: 'testingnetwork',
+        Bucket: 'imagelop',
         Delete: {
             Objects: [
                 {Key: 'mypicRj.jpg'}
