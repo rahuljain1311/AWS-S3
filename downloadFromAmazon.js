@@ -3,7 +3,7 @@
 var AWS = require('aws-sdk');
 // var uuid = require('node-uuid');
 
-var bucketName = 'imagelop';
+var bucketName = 'clsdb01localimagebucket';
 var fs = require('fs');
 var request = require('request');
 
@@ -20,19 +20,17 @@ var download = function(uri, filename, callback){
 function getFileFromAmazon() {
 
     var s3bucket = new AWS.S3({
-        region: 'ap-south-1',
-        params: {Bucket: bucketName},
-        signatureVersion: 'v4'
+        params: {Bucket: bucketName}
     });
-    var urlParams = {Bucket: bucketName, Key: 'imgNew1.jpg'};
+    var urlParams = {Key: '' + 31 };
     s3bucket.getSignedUrl('getObject', urlParams, function(err, url){
         console.log('the url of the image is', url);
 
-        // download(url, 'google1.jpg', function(){
-        //     console.log('done');
-        // });
-        var imgStream = s3bucket.getObject(urlParams).createReadStream();
-        return imgStream;
+        download(url, 'google1311.jpg', function(){
+            console.log('done');
+        });
+        // var imgStream = s3bucket.getObject(urlParams).createReadStream();
+        // return imgStream;
     });
     // s3bucket.getObject(params, function(errBucket, dataBucket) {
     //     if (errBucket) {
