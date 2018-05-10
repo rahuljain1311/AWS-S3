@@ -40,6 +40,13 @@ Eg.
 The S3 documentation has a good overview of the [restrictions for bucket names](http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html)
 for when you start making your own buckets.
 
+
+## Running Twilio starter kit: 
+1. Run `node twilioServer.js`. It will start running on port 3000
+2. Expose local port 3000 to internet using ngrok. `./ngrok http -host-header="http://127.0.0.1:3000" 3000`. ngrok executable file is present in the downloads folder
+3. Change phone number in twilioCall.js file. Also dont forget to replace authtoken. To call the person `node twilioCall.js`
+
+
 ## License
 
 This sample application is distributed under the
