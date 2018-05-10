@@ -2,8 +2,8 @@ var mailgun = require("mailgun-js");
 var fs = require('fs');
 var _ = require('lodash');
 
-var api_key = 'key-848187e8bdea2f639ab01a8de59122a1';
-var DOMAIN = 'sandbox0535398860da4c528bb79a2bc924be82.mailgun.org';
+var api_key = '*****';
+var DOMAIN = '*****';
 
 
 var mailgun = require('mailgun-js')({apiKey: api_key, domain: DOMAIN});
